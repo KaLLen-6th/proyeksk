@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         ..getNilaiSoil()
         )],
       child: MaterialApp(
-        title: 'MONITORING',
+        title: 'MONITORING LIDAH MERTUA',
         home: HomePage(),
         debugShowCheckedModeBanner: false,
       ),
