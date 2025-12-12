@@ -6,4 +6,5 @@ class TemaWarna {
   static const Color sage = Color(0xffA4AC86);
   static const Color dun = Color(0xffCCBFA3);
   static const Color bone = Color(0xffEBE3D2);
+  static const Color merah = Colors.red;
 }
