@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "866407388292",
+    "firebase_url": "https://proyeksk2025-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "proyeksk2025",
+    "storage_bucket": "proyeksk2025.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866407388292:android:7830581fb42e678ae21ed1",
+        "android_client_info": {
+          "package_name": "com.example.projeksk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-vFn74M63yVkqPnihQQapLh9x2FHktzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
