@@ -68,8 +68,28 @@ class _HomePageState extends State<HomePage> {
                         )
                     ),
                   ),
+                  ListTile(
+                    leading: Icon(Icons.autorenew),
+                    title: Text("Mode Otomatis"),
+                    trailing: Switch(
+                        value: appProvider.autoMode,
+                        onChanged: (value) {
+                          appProvider.setAutoMode(value);
+                        }),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.lightbulb),
+                    title: Text("LED Manual"),
+                    trailing: Switch(
+                        value: appProvider.NilaiLed,
+                        onChanged: appProvider.autoMode
+                            ? null
+                            : (value) {
+                          appProvider.setLed(value);
+                        }),
+                  )
                 ],
-              )
+              ),
             ),
             body: Column(
               children: [
@@ -177,7 +197,7 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(20)
                   ),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Center(
                         child: Text(

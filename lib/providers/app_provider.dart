@@ -7,6 +7,8 @@ class AppProvider extends ChangeNotifier{
   dynamic NilaiSuhu;
   dynamic NilaiKelembaban;
   dynamic NilaiSoil;
+  bool NilaiLed = false;
+  bool autoMode = false;
   final database = FirebaseDatabase.instance.ref();
 
   Future getNilaiSuhu() async {
@@ -37,6 +39,38 @@ class AppProvider extends ChangeNotifier{
       notifyListeners();
     }
     );
+  }
+
+  //LISTEN STATUS LED DARI FIREBASE
+  Future getStatusLed() async {
+    database.child('DataLed').onValue.listen((event) {
+      NilaiLed = event.snapshot.value == true;
+      notifyListeners();
+    });
+  }
+
+  //LISTEN MODE AUTO
+  Future getAutoMode() async {
+    database.child('DataLed_AUTO').onValue.listen((event) {
+      autoMode = event.snapshot.value == true;
+      notifyListeners();
+    });
+  }
+
+  //SET LED MANUAL (HANYA JIKA AUTO OFF)
+  Future setLed(bool status) async {
+    if (autoMode) return; // kunci manual saat auto aktif
+
+    NilaiLed = status;
+    notifyListeners();
+    await database.child('DataLed').set(status);
+  }
+
+ // AKTIF / NONAKTIF MODE AUTO
+  Future setAutoMode(bool status) async {
+  autoMode = status;
+  notifyListeners();
+  await database.child('NilaiLed_AUTO').set(status);
   }
 
   TextStyle model1 = GoogleFonts.poppins(

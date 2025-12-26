@@ -26,6 +26,8 @@ class MyApp extends StatelessWidget {
         ..getNilaiSuhu()
         ..getNilaiKelembaban()
         ..getNilaiSoil()
+        ..getStatusLed()
+        ..getAutoMode()
         )],
       child: MaterialApp(
         title: 'MONITORING LIDAH MERTUA',
