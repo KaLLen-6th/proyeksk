@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   ListTile(
                     leading: Icon(Icons.lightbulb),
-                    title: Text("LED Manual"),
+                    title: Text("LED Manual", style: appProvider.model1,),
                     trailing: Switch(
                         value: appProvider.NilaiLed,
                         onChanged: appProvider.autoMode
