@@ -88,6 +88,11 @@ class AppProvider extends ChangeNotifier{
       fontWeight: FontWeight.w300,
       color: TemaWarna.bone
   );
+   TextStyle model3 = GoogleFonts.poppins(
+      fontSize: 13,
+      fontWeight: FontWeight.w400,
+      color: TemaWarna.bone
+  );
   TextStyle modeltitle = GoogleFonts.poppins(
       fontSize: 16,
       fontWeight: FontWeight.bold,
