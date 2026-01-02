@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:projeksk/providers/app_provider.dart';
 import 'package:projeksk/themes/color.dart';
+import 'package:projeksk/widget/app_drawer.dart';
 import 'package:projeksk/widget/data_container.dart';
 import 'package:provider/provider.dart';
 
@@ -21,76 +22,7 @@ class _HomePageState extends State<HomePage> {
           return Scaffold(
             key: Scaffoldkey,
             backgroundColor: TemaWarna.bone,
-            endDrawer: Drawer(
-              backgroundColor: TemaWarna.bone,
-              child: ListView(
-                padding: EdgeInsets.zero,
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(
-                      bottom: 15,
-                    ),
-                    padding: EdgeInsets.only(
-                      top: 20,
-                    ),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [TemaWarna.ebony, TemaWarna.sage],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter
-                      ),
-                      borderRadius: BorderRadius.vertical(
-                        bottom: Radius.circular(25)
-                      ),
-                      boxShadow: const [
-                      BoxShadow(
-                          color: Colors.black26,
-                          blurRadius: 5,
-                          offset: Offset(0, 5)
-                      )
-                     ]
-                    ),
-                    child: Container(
-                      padding: EdgeInsets.only(
-                          top: 30, bottom: 30
-                      ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 13),
-                                child: Text(
-                                    "Menu Aplikasi",
-                                    style: appProvider.modeldrawer,
-                                ),
-                              ),
-                          ],
-                        )
-                    ),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.autorenew),
-                    title: Text("Mode Otomatis"),
-                    trailing: Switch(
-                        value: appProvider.autoMode,
-                        onChanged: (value) {
-                          appProvider.setAutoMode(value);
-                        }),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.lightbulb),
-                    title: Text("LED Manual", style: appProvider.model1,),
-                    trailing: Switch(
-                        value: appProvider.NilaiLed,
-                        onChanged: appProvider.autoMode
-                            ? null
-                            : (value) {
-                          appProvider.setLed(value);
-                        }),
-                  )
-                ],
-              ),
-            ),
+            endDrawer: const AppDrawer(),
             body: Column(
               children: [
                 Container(
